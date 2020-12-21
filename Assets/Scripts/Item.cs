@@ -16,7 +16,7 @@ public class Item : Interactible
 
     public override void Interact()
     {
-        if (transform.parent.gameObject.TryGetComponent(out Counter counter))
+        if (transform.parent.gameObject.TryGetComponent(out Register register))
         {
             //delete object from counter
             Destroyed?.Invoke(this);
@@ -27,5 +27,15 @@ public class Item : Interactible
             //announce that object is called
             CalledFromShelf?.Invoke(this);
         }
+    }
+
+    public override void OnPointerEnter()
+    {
+        //do nothing
+    }
+
+    public override void OnPointerExit()
+    {
+        //do nothing
     }
 }
